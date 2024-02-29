@@ -8,6 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -17,7 +20,11 @@ import { LoginPageComponent } from './login-page/login-page.component';
     EditPageComponent,
     LoginPageComponent,
   ],
+
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     CommonModule,
     RouterOutlet,
     RouterModule.forChild([
@@ -25,11 +32,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
         path: '',
         component: AdminLayoutComponent,
         children: [
-          {
-            path: '',
-            redirectTo: 'login',
-            pathMatch: 'full',
-          },
+          { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'login', component: LoginPageComponent },
           { path: 'add', component: AddPageComponent },
           { path: 'dashboard', component: DashboardComponent },

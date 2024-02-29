@@ -1,2 +1,27 @@
-<h1>Admin</h1>
-<router-outlet></router-outlet>
+<nav class="navbar">
+  <h1>
+    <a routerLink="/">Onlain shop</a>
+  </h1>
+
+  <ul>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'dashboard']">dashboard</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'add']">add product</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'orders']">orders</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'dashboard']">Logout</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'login']">login</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
