@@ -28,7 +28,8 @@ export class LoginPageComponent {
     const user = {
       email: this.form.value.email,
       password: this.form.value.password,
+      returnSecureToken: true,
     };
-    // this.auth.login(user).subscribe((res) => console.log(res));
+    this.auth.login(user).subscribe((res) => console.log(res));
   }
 }
