@@ -1,1 +1,55 @@
-<p>add-page works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2 class="text-center">add product</h2>
+
+  <div>
+    <label for="type">type</label>
+    <select formControlName="type">
+      <option value="phone">phone</option>
+      <option value="tablet">tablet</option>
+      <option value="laptop">laptop</option>
+    </select>
+    <div *ngIf="form.get('type')?.touched && form.get('type')?.invalid">
+      <small *ngIf="form.get('type')?.errors?.['required']">
+        выберите тип товара
+      </small>
+    </div>
+  </div>
+  <div>
+    <label for="name">name</label>
+    <input id="name" type="name" formControlName="name" />
+    <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+      <small *ngIf="form.get('name')?.errors?.['required']">
+        введите имя продукта
+      </small>
+    </div>
+  </div>
+  <div>
+    <label for="photo">photo</label>
+    <quill-editor formControlName="photo"></quill-editor>
+    <div *ngIf="form.get('photo')?.touched && form.get('photo')?.invalid">
+      <small *ngIf="form.get('photo')?.errors?.['required']">
+        введите эмэйл
+      </small>
+    </div>
+  </div>
+  <div>
+    <label for="info">info</label>
+    <quill-editor formControlName="info"></quill-editor>
+    <div *ngIf="form.get('info')?.touched && form.get('info')?.invalid">
+      <small *ngIf="form.get('info')?.errors?.['required']">
+        введите эмэйл
+      </small>
+    </div>
+  </div>
+  <div>
+    <label for="price">price</label>
+    <input id="price" type="price" formControlName="price" />
+    <div *ngIf="form.get('price')?.touched && form.get('price')?.invalid">
+      <small *ngIf="form.get('price')?.errors?.['required']">
+        введите цену товара
+      </small>
+    </div>
+  </div>
+
+  <button type="submit">add</button>
+</form>

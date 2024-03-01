@@ -10,6 +10,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     CommonModule,
     RouterOutlet,
+    QuillModule.forRoot(),
     RouterModule.forChild([
       {
         path: '',
